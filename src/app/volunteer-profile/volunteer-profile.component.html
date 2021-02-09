@@ -1,0 +1,45 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button [routerLink]="['/']"> 
+      <ion-icon slot="icon-only" name="arrow-back-outline" ></ion-icon> 
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+    <ion-button *ngIf="false">
+      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['/']">
+      <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Update Profile</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <div style="position: relative;">
+  <ion-img src="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"></ion-img>
+
+
+  <ion-fab slot="fixed"  class="change-pic">
+    <ion-fab-button size="small">
+      <ion-icon name="camera-outline"></ion-icon>
+      <ion-input class="change-pic" type="file" (change)="uploadImage($event.target.files)" style="opacity: 0; z-index: 999; height: 100%; border-radius: 50%;"></ion-input>
+    </ion-fab-button>
+
+  </ion-fab>
+
+</div>
+
+  <ion-item>
+    <ion-label position="floating">Full Name</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email Address</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-button>
+    <ion-icon slot="icon-only" name="save-outline"></ion-icon>&nbsp; Save
+  </ion-button> 
+
+</ion-content>

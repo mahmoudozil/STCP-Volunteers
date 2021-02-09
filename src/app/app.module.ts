@@ -11,14 +11,25 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FirstActivityModule } from './first-activity/first-activity.module';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { VolunteerProfileModule } from './volunteer-profile/volunteer-profile.module';
+import { FormatFileSizePipe } from './core/FormatFileSizePipe ';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormatFileSizePipe],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  
-    AngularFireModule.initializeApp(environment.firebase),  
-    AngularFirestoreModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,  
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    FirstActivityModule,
+    VolunteerProfileModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
